@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "Meal": {
+      "title": "Daily Meal",
+      "description": "Daily food menu and photo",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string" },
+        "menuEnglish": { "type": "string" },
+        "menuKannada": { "type": "string" },
+        "date": { "type": "string" }
+      },
+      "required": ["imageUrl", "menuEnglish", "menuKannada", "date"]
+    },
+    "Facility": {
+      "title": "School Facility",
+      "description": "Photos of school labs, libraries, etc.",
+      "type": "object",
+      "properties": {
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string", "enum": ["Labs", "Library", "Toilets", "Classroom"] },
+        "descriptionEnglish": { "type": "string" },
+        "descriptionKannada": { "type": "string" }
+      },
+      "required": ["imageUrl", "category"]
+    },
+    "Student": {
+      "title": "Student Star",
+      "description": "Achieving student profile",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "achievementEnglish": { "type": "string" },
+        "achievementKannada": { "type": "string" },
+        "imageUrl": { "type": "string" }
+      },
+      "required": ["name", "achievementEnglish", "achievementKannada", "imageUrl"]
+    },
+    "Feedback": {
+      "title": "Feedback Box",
+      "description": "User feedback",
+      "type": "object",
+      "properties": {
+        "message": { "type": "string" },
+        "isAnonymous": { "type": "boolean" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "userId": { "type": "string" }
+      },
+      "required": ["message", "isAnonymous", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/dailyMeals/{date}": {
+      "schema": "Meal",
+      "description": "Daily meal updates indexed by date (YYYY-MM-DD)"
+    },
+    "/facilities/{facilityId}": {
+      "schema": "Facility",
+      "description": "Collection of school facility details"
+    },
+    "/students/{studentId}": {
+      "schema": "Student",
+      "description": "Collection of student achievements"
+    },
+    "/feedback/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "Collection of community feedback"
+    }
+  }
+}

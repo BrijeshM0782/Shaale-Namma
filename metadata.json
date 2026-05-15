@@ -1,0 +1,6 @@
+{
+  "name": "Shale-Namma",
+  "description": "A school transparency and pride app for government schools to showcase daily activities, meals, facilities, and student achievements.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["firebase"]
+}
