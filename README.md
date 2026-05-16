@@ -79,12 +79,6 @@ Click the **Run ▶** button in Android Studio, or:
 
 ---
 
-## Demo
-
-- Video: [YouTube Link](https://youtube.com/your-link)
-- APK: [Download](https://github.com/BrijeshM0782/ShaleNamma/releases)
-
----
 
 ## Folder Structure
 
